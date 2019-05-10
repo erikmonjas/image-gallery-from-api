@@ -1,0 +1,21 @@
+{
+  "name": "image-gallery-from-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "Érik Monjas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.5.7",
+    "morgan": "^1.9.1",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
