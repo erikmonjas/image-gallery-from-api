@@ -9,13 +9,14 @@ router.get('/', async (req, res) => {
 });
 
 router.post('', async (req, res) => {
-  const imageToUpload = new Image({ ...req.body });
-  console.log(imageToUpload);
-  // try {
-  //   await imageToUpload.save();
-  // } catch {
-  //   throw new Error('Invalid data');
-  // }
+  const imageToUpload = new Image(req.body);
+  try {
+    await imageToUpload.save();
+    res.status(200);
+  } catch (e) {
+    res.status(500);
+    throw new Error(e);
+  }
   res.json({ status: 'OK' });
 });
 
