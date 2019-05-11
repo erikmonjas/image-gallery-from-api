@@ -70,23 +70,3 @@ const ImageSchema = new Schema(
 );
 
 module.exports = mongoose.model('Image', ImageSchema);
-
-// {
-//   "title": "Desert",
-//     "author": "Erik",
-//       "main_atachment": {
-//     "big": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09ac6463937373.5ac21ad9c8c7c.jpg",
-//       "small": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09ac6463937373.5ac21ad9c8c7c.jpg"
-//   },
-//   "links": [{
-//     "rel": "avatar",
-//     "uri": "http://lorempixel.com/250/250/",
-//     "methods": "GET"
-//   },
-//   {
-//     "rel": "like",
-//     "uri": "http://localost:3000/images/Desert/like",
-//     "methods": "GET"
-//   }
-//   ]
-// }
