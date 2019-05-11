@@ -4,26 +4,18 @@ const router = express.Router();
 const Image = require('../models/image');
 
 router.get('', async (req, res) => {
-  const imagesByPage = 1;
+  const imagesByPage = 2;
   const pageNumber = parseInt(req.query.page);
-  let pageImages = [];
 
-  if (req.query.lastID) {
-    pageImages = await Image.find({ _id: { $gt: req.query.lastID } })
-      .limit(imagesByPage)
-      .sort({ $natural: -1 });
-  } else {
-    pageImages = await Image.find()
-      .limit(imagesByPage)
-      .sort({ $natural: -1 });
-  }
-  const mostRecentImages = pageImages.sort((a, b) => (b._id > a._id ? 1 : -1));
-  const lastID = pageImages[pageImages.length - 1]._id;
+  const pageImages = await Image.find()
+    .skip(pageNumber * imagesByPage)
+    .limit(imagesByPage)
+    .sort({ $natural: -1 });
 
   const resJSON = {
-    data: mostRecentImages,
+    data: pageImages,
     pagination: {
-      next: `http://localhost:3000/images?page=${pageNumber + 1}?lastID=${lastID}`,
+      next: `http://localhost:3000/images?page=${pageNumber + 1}`,
       prev: pageNumber === 0 ? null : `http://localhost:3000/images?page=${pageNumber - 1}`,
     },
   };
