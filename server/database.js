@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost/imageGallery';
+const dbURI =
+  'mongodb+srv://erik_monjas:erik123@imagegallery-qreer.mongodb.net/test?retryWrites=true';
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true })
