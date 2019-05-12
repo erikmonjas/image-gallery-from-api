@@ -13,12 +13,12 @@
     "express": "^4.16.4",
     "mongoose": "^5.5.7",
     "morgan": "^1.9.1",
-    "validator": "^10.11.0",
-    "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2"
+    "validator": "^10.11.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   }
 }
