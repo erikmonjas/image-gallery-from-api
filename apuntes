@@ -1,0 +1,3 @@
+npm i babel-core babel-loader babel-preset-react babel-preset-env -D
+
+/Users/Erik/mongodb/bin/mongod --dbpath=/Users/Erik/mongodb-data
