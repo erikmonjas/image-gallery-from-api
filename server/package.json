@@ -1,11 +1,10 @@
 {
-  "name": "image-gallery-from-api",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
-    "webpack": "webpack --mode development"
+    "server": "nodemon index.js"
   },
   "keywords": [],
   "author": "Érik Monjas",
