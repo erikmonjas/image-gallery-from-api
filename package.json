@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon src/index.js"
+    "server": "nodemon src/index.js",
+    "webpack": "webpack --mode development"
   },
   "keywords": [],
   "author": "Érik Monjas",
@@ -18,6 +19,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "nodemon": "^1.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }
