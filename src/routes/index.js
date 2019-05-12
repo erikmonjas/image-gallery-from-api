@@ -29,7 +29,12 @@ router.get('', async (req, res) => {
 
 router.get('/:title', async (req, res) => {
   try {
-    const imageToFind = await Image.find({ title: { $regex: `.*${req.params.title}.*` } });
+    const imageToFind = await Image.find({
+      $or: [
+        { title: { $regex: `.*${req.params.title}.*` } },
+        { author: { $regex: `.*${req.params.title}.*` } },
+      ],
+    });
 
     res.status(200).send(imageToFind);
   } catch (e) {
@@ -39,9 +44,11 @@ router.get('/:title', async (req, res) => {
 
 router.post('', async (req, res) => {
   const title = req.body.title.toLowerCase();
+  const author = req.body.author.toLowerCase();
   const imageData = {
     ...req.body,
     title,
+    author,
   };
   const imageToUpload = new Image(imageData);
   try {
