@@ -5,7 +5,7 @@ const Image = require('../models/image');
 
 router.get('', async (req, res) => {
   const imagesByPage = 8;
-  const pageNumber = parseInt(req.query.page);
+  const pageNumber = req.query.page ? parseInt(req.query.page) : 0;
 
   try {
     const pageImages = await Image.find()
@@ -16,8 +16,8 @@ router.get('', async (req, res) => {
     const resJSON = {
       data: pageImages,
       pagination: {
-        next: `http://localhost:3000/images?page=${pageNumber + 1}`,
-        prev: pageNumber === 0 ? null : `http://localhost:3000/images?page=${pageNumber - 1}`,
+        next: `/images?page=${pageNumber + 1}`,
+        prev: pageNumber === 0 ? null : `/images?page=${pageNumber - 1}`,
       },
     };
 

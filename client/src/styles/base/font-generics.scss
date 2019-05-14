@@ -1,0 +1,24 @@
+$directions: (center, left, right);
+
+$media-sizes: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+@each $direction in $directions {
+  .text-#{$direction} {
+    text-align: $direction !important;
+  }
+}
+
+@each $prefix, $size in $media-sizes {
+  @media (min-width: $size) {
+    @each $direction in $directions {
+      .text-#{$prefix}-#{$direction} {
+        text-align: $direction !important;
+      }
+    }
+  }
+}
