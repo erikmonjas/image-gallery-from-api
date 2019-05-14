@@ -4,14 +4,14 @@ const router = express.Router();
 const Image = require('../models/image');
 
 router.get('', async (req, res) => {
-  const imagesByPage = 2;
+  const imagesByPage = 8;
   const pageNumber = parseInt(req.query.page);
 
   try {
     const pageImages = await Image.find()
       .skip(pageNumber * imagesByPage)
-      .limit(imagesByPage)
-      .sort({ $natural: -1 });
+      .limit(imagesByPage);
+    // .sort({ $natural: -1 });
 
     const resJSON = {
       data: pageImages,

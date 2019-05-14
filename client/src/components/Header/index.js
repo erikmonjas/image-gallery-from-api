@@ -2,9 +2,9 @@ import React from 'react';
 import Logo from '../Logo';
 import SearchBox from '../SearchBox';
 
-const Header = () => {
+const Header = ({ className }) => {
   return (
-    <div className='header d-flex'>
+    <div className={`header d-flex ${className}`}>
       <div className='container header__container'>
         <div className='row justify-content-between align-items-center header__row'>
           <div className='col-3 col-md-2 col-xl-1'>

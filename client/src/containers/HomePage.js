@@ -6,7 +6,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header className='mb-40' />
         <ImageGallery />
       </>
     );

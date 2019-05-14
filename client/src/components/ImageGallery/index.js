@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Card from '../Card';
 
 export default class ImageGallery extends Component {
   state = {
@@ -27,9 +28,11 @@ export default class ImageGallery extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-12'>
-            {this.state.images.length > 0 && <p>{this.state.images.length}</p>}
-          </div>
+          {this.state.images.map(image => (
+            <div className='col-12 col-md-6 col-lg-3' key={image.created_at}>
+              <Card {...image} />
+            </div>
+          ))}
         </div>
       </div>
     );
