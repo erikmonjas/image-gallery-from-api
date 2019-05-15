@@ -74,7 +74,9 @@ export default class ImageGallery extends Component {
             <Loader />
           </div>
         )}
-        {this.state.reachedEnd && <p className='text-center m-50'>No more images to show</p>}
+        {this.state.reachedEnd && (
+          <p className='text-center m-50 text-primary-text'>No more images to show</p>
+        )}
       </div>
     );
   }

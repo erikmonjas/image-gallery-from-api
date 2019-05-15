@@ -38,7 +38,17 @@
     font-size: 22px;
   }
   @media (max-width: 768px) {
-    display: none;
+    position: static;
+    top: initial;
+    left: initial;
+    height: initial;
+    background: none;
+    z-index: 0;
+    opacity: 1;
+    .like-count {
+      color: $text-primary;
+      margin-top: 0;
+    }
   }
 }
 
@@ -51,6 +61,40 @@
     &:hover {
       opacity: 0.6;
       transition: opacity 0.3s ease;
+    }
+  }
+  @media (max-width: 768px) {
+    float: none;
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.card__action {
+  @media (max-width: 768px) {
+    height: 60px;
+    width: 50%;
+    border-top: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button img {
+      filter: brightness(0.7);
+    }
+    button.like-button--active img {
+      filter: brightness(1);
+    }
+    &:first-of-type {
+      button {
+        margin-left: 20px;
+      }
+    }
+    &:last-of-type {
+      border-right: none;
+      button {
+        margin-right: 20px;
+      }
     }
   }
 }

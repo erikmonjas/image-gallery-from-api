@@ -39,7 +39,9 @@ export default class LikeButton extends Component {
   render() {
     return (
       <>
-        <button className='like-button' onClick={() => this.toggleLike()}>
+        <button
+          className={`like-button ${this.state.liked ? 'like-button--active' : ''}`}
+          onClick={() => this.toggleLike()}>
           <img src={this.state.liked ? LikedIconSrc : LikeIconSrc} alt='like' />
         </button>
       </>
