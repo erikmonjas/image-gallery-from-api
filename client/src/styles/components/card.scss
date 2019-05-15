@@ -1,7 +1,6 @@
 .card {
   position: relative;
   margin-bottom: 20px;
-  height: 460px;
   width: 100%;
   background-color: $primary;
   border: 1px solid $border-color;
@@ -32,4 +31,46 @@
   z-index: 1;
   opacity: 0;
   transition: opacity 0.1666s ease;
+  .like-count {
+    color: $primary;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.card__overlay-actions {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  .like-button {
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+.card__content {
+  height: 100px;
+  padding: 0 20px;
+}
+
+.card__title {
+  font-family: $font-neutra;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.card__author {
+  margin-top: 10px;
+  font-family: $font-droid;
+  text-align: center;
+  font-size: 19px;
 }

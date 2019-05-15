@@ -22,3 +22,23 @@ $media-sizes: (
     }
   }
 }
+
+.font-neutra {
+  font-family: $font-neutra !important;
+}
+
+.font-droid {
+  font-family: $font-droid !important;
+}
+
+$colors: (
+  primary: #ffffff,
+  opposite: #000000,
+  primary-text: #c6c6c6,
+);
+
+@each $color, $code in $colors {
+  .text-#{$color} {
+    color: $code !important;
+  }
+}

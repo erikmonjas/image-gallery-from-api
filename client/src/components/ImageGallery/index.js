@@ -18,7 +18,7 @@ export default class ImageGallery extends Component {
     document.addEventListener('scroll', () => {
       if (!this.state.reachedEnd) {
         if (!this.state.bottomFunctionRunning) {
-          if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 40) {
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
             this.onBottomReached();
           }
         }
@@ -53,7 +53,6 @@ export default class ImageGallery extends Component {
   };
 
   onBottomReached = () => {
-    console.warn(this.state.pagination);
     this.setState({ showLoader: true, bottomFunctionRunning: true });
     this.getImages(true);
   };
