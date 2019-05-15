@@ -8,16 +8,21 @@
     "install client": "npm install --prefix client",
     "server": "nodemon server/index.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "Érik Monjas",
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "nodemon": "^1.19.0"
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4"
   },
   "dependencies": {
+    "nodemon": "^1.19.0",
     "concurrently": "^4.1.0"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.14.2"
   }
 }
