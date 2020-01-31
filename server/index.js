@@ -19,7 +19,11 @@ app.use(express.json());
 app.use('/images', routes);
 
 /* Static files */
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/public')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '../client/public/index.html'));
+});
 
 app.listen(port, () => {
   console.log(`Up on port ${port}`);
